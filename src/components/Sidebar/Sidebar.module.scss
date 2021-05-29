@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 241px;
+  padding: 50px 20px;
+  background: $sidebarbackground;
+  color: white;
+}
