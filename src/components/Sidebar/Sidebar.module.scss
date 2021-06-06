@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/breakpoints';
 
 .wrapper {
   display: flex;
@@ -7,6 +8,14 @@
   padding: 50px 20px;
   background: $sidebarbackground;
   color: white;
+
+  @include media('<desktop') {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px 30px;
+    width: auto;
+    max-height: 140px;
+  }
 }
 
 .avatarWrapper {
@@ -14,16 +23,27 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 5%;
+
+  @include media('<desktop') {
+    margin-bottom: 0;
+    flex-direction: row;
+    align-items: initial;
+  }
 }
 
 .imageWrapper {
   display: flex;
   border: 2px solid white;
   border-radius: 50%;
-  width: 96px;
-  height: 96px;
+  width: 106px;
+  height: 106px;
   overflow: hidden;
   margin-bottom: 24px;
+
+  @include media('<desktop') {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
 }
 
 .imageSrc {
@@ -31,20 +51,45 @@
   height: 100%;
 }
 
+.userNameBlock {
+  text-align: center;
+  @include media('<desktop') {
+    margin-bottom: 0;
+  }
+}
+
 .userName {
-  margin-top: 4px;
+  margin-bottom: 15px;
 }
 .userJob {
   margin-bottom: 20%;
+  @include media('<desktop') {
+    margin-bottom: 0;
+  }
 }
 
 .detailsWrapper {
   margin-bottom: 15%;
+  @include media('<desktop') {
+    margin-bottom: 0;
+    display: none;
+  }
+}
+
+.detailsTitle {
+  margin-bottom: 5%;
 }
 
 .contacts {
   display: flex;
   flex-direction: column;
+}
+
+.contactsTitle {
+  margin-bottom: 5%;
+  @include media('<desktop') {
+    display: none;
+  }
 }
 
 .socialAccs {
@@ -55,7 +100,7 @@
   display: flex;
   align-items: center;
   margin-right: 14px;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
 
   &:last-child {
     margin-right: 0;

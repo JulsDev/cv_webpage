@@ -18,16 +18,17 @@ function SidebarInfo() {
         <div className={ss.imageWrapper}>
           <img src={avatarImg} alt="frontend developer avatar" className={ss.imageSrc} />
         </div>
-        <h2 className={ss.userName}>Iuliia Aseeva</h2>
-        <div className={ss.userJob}>Frontend Engeneer</div>
-        {/* <p>***</p> */}
+        <div className={ss.userNameBlock}>
+          <h1 className={ss.userName}>Iuliia Aseeva</h1>
+          <h3 className={ss.userJob}>Frontend Engeneer</h3>
+        </div>
       </div>
       <div className={ss.detailsWrapper}>
-        <h3>Details</h3>
+        <h3 className={ss.detailsTitle}>Details</h3>
         <div>Moscow</div>
       </div>
       <div className={ss.contacts}>
-        <h3>Contacts</h3>
+        <h3 className={ss.contactsTitle}>Contacts</h3>
         <div>
           <div className={ss.contactsItem}>
             <img src={phone} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} />
