@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "ReactJsProEdition",
   "scripts": {
+    "clean": "rm -rf ./build",
     "start": "env NODE_ENV=development webpack-dev-server",
     "lint": "lint-staged",
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
