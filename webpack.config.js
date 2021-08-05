@@ -14,7 +14,7 @@ module.exports = {
 
   entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
   },
 
@@ -79,11 +79,11 @@ module.exports = {
       patterns: [
         {
           from: 'public/favicon.ico',
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'build'),
         },
         {
           from: 'public/manifest.json',
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'build'),
         },
       ],
     }),
