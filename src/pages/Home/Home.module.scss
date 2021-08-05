@@ -10,7 +10,8 @@
 }
 
 .container {
-  max-width: 1125px;
+  display: flex;
+  // max-width: 1024px;
   width: 100%;
   height: 100%;
   min-height: 100vh;

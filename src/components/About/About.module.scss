@@ -1,9 +1,42 @@
+@import '../../styles/variables.scss';
+
 .wrapper {
   display: flex;
   padding: 50px 5% 0;
 }
 
-.blockInfo {
+.profile {
   display: flex;
   flex-direction: column;
+}
+
+.about {
+  margin-bottom: 30px;
+}
+
+.subTitle {
+  color: $sidebarbackground;
+  margin-bottom: 20px;
+}
+
+.tableRow {
+  vertical-align: top;
+}
+
+.tagStyle {
+  border: 2px solid $pageText;
+  border-radius: 18px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
 }
