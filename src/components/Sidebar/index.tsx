@@ -3,13 +3,10 @@ import cn from 'classnames';
 
 import ss from './Sidebar.module.scss';
 
-import avatarImg from '../../assets/images/avatar.jpg';
-import githubSvg from '../../assets/icons/github.svg';
-import linkedIn from '../../assets/icons/linkedIn.svg';
-import facebook from '../../assets/icons/facebook.svg';
+import { socialList } from '../../utils/index';
+import avatarImg from '../../assets/images/avatar.jpeg';
 import phone from '../../assets/icons/phone.svg';
 import envelop from '../../assets/icons/envelop.svg';
-import telegram from '../../assets/icons/telegram.svg';
 
 function SidebarInfo() {
   return (
@@ -19,49 +16,35 @@ function SidebarInfo() {
           <img src={avatarImg} alt="frontend developer avatar" className={ss.imageSrc} />
         </div>
         <div className={ss.userNameBlock}>
-          <h1 className={ss.userName}>Iuliia Aseeva</h1>
-          <h3 className={ss.userJob}>Frontend Engeneer</h3>
+          <h2 className={ss.userName}>Julia Aseeva</h2>
+          <h3 className={ss.userJob}>Frontend Engineer</h3>
         </div>
       </div>
       <div className={ss.detailsWrapper}>
         <h3 className={ss.detailsTitle}>Details</h3>
-        <div>Moscow</div>
+        <div>San Francisco Bay Area</div>
       </div>
       <div className={ss.contacts}>
         <h3 className={ss.contactsTitle}>Contacts</h3>
         <div>
           <div className={ss.contactsItem}>
             <img src={phone} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} />
-            <p>+ 7 916 136 69 87</p>
+            <p>+ 1 925 430 96 14</p>
           </div>
           <div className={ss.contactsItem}>
             <img src={envelop} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} />
             <p>aseeva.ays@gmail.com</p>
           </div>
           <div className={ss.socialAccs}>
-            <div className={ss.contactsItem}>
-              <a href="https://github.com/JulsDev" target="_blank" className={ss.contactsLink}>
-                <img src={githubSvg} className={ss.contactsLinkSvg} />
-              </a>
-            </div>
-            <div className={ss.contactsItem}>
-              <a href="https://www.linkedin.com/in/julia-aseeva-8a1751171" target="_blank" className={ss.contactsLink}>
-                <img src={linkedIn} className={ss.contactsLinkSvg} />
-              </a>
-            </div>
-            <div className={ss.contactsItem}>
-              <a
-                href="https://www.facebook.com/profile.php?id=100013984274634"
-                target="_blank"
-                className={ss.contactsLink}>
-                <img src={facebook} className={ss.contactsLinkSvg} />
-              </a>
-            </div>
-            <div className={ss.contactsItem}>
-              <a href="https://t.me/julsdev" target="_blank" className={ss.contactsLink}>
-                <img src={telegram} className={ss.contactsLinkSvg} />
-              </a>
-            </div>
+            {socialList.map((item) => {
+              return (
+                <div className={ss.contactsItem} key={item.id}>
+                  <a href={item.link} target="_blank" rel="noreferrer" className={ss.contactsLink}>
+                    <img src={item.image} className={ss.contactsLinkSvg} alt={item.link} />
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
