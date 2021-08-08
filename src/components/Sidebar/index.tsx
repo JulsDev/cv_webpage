@@ -28,11 +28,11 @@ function SidebarInfo() {
         <h3 className={ss.contactsTitle}>Contacts</h3>
         <div>
           <div className={ss.contactsItem}>
-            <img src={phone} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} />
+            <img src={phone} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} alt="contacts phone" />
             <p>+ 1 925 430 96 14</p>
           </div>
           <div className={ss.contactsItem}>
-            <img src={envelop} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} />
+            <img src={envelop} className={cn(ss.contactsLinkSvg, ss['contactsLinkSvg--phone'])} alt="contacts email" />
             <p>aseeva.ays@gmail.com</p>
           </div>
           <div className={ss.socialAccs}>

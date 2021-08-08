@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 const isProd = NODE_ENV === 'production';
@@ -18,11 +19,24 @@ module.exports = {
     filename: 'main.js',
   },
 
-  watch: true,
-  watchOptions: {
-    ignored: /node_modules/,
-    poll: 1000,
-  },
+  optimization: isProd
+    ? {
+        minimize: true,
+        minimizer: [
+          new TerserPlugin({
+            terserOptions: {
+              // Use multi-process parallel running to improve the build speed
+              parallel: true,
+              cache: true, // Enable file caching
+            },
+          }),
+        ],
+      }
+    : {
+        splitChunks: {
+          chunks: 'all',
+        },
+      },
 
   module: {
     rules: [
